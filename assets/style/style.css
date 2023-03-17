@@ -1,1 +1,45 @@
 /* BASIC STYLES HERE */
+body {
+  background-size: cover;
+  background-position: center;
+}
+
+footer {
+  background-color: transparent;
+  position: fixed;
+  bottom: 0px;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+
+.my-text {
+  color: #e9ecef;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+}
+
+.author {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity .5s linear;
+}
+
+.quote:hover+.author {
+  visibility: visible;
+  opacity: 1;
+}
+
+.glass-card {
+  padding: 1em;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.498);
+}
+
+#weather {
+  position: fixed;
+  right: 15px;
+  top: 15px
+}
