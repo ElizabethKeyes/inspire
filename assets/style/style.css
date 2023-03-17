@@ -39,6 +39,16 @@ footer {
   min-width: 6vw
 }
 
+.todo-card {
+  padding: 1em;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.498);
+  min-width: 20vw;
+  position: fixed;
+  bottom: 125px;
+  right: 15px;
+}
+
 #weather {
   position: fixed;
   right: 15px;
@@ -47,4 +57,14 @@ footer {
 
 .my-clock {
   font-size: 6em;
+}
+
+.inline-input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px
+}
+
+.btn-search {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px
 }
