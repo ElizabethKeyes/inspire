@@ -23,6 +23,15 @@ class TodosService {
     const res = await todoAPI.delete(`${id}`)
     appState.todos = appState.todos.filter(t => t.id != id)
   }
+
+  async complete(id) {
+    let todo = appState.todos.find(t => t.id == id)
+    todo.completed = !todo.completed
+    const res = await todoAPI.put(`${id}`, todo)
+    let todoIndex = appState.todos.findIndex(t => t.id == id)
+    appState.todos.splice(todoIndex, 1, todo)
+    appState.emit('todos')
+  }
 }
 
 export const todosService = new TodosService()
