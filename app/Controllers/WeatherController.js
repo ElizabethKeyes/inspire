@@ -4,16 +4,14 @@ import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js";
 
 function _drawWeather() {
-  console.log('drawing');
   setHTML('weather', appState.weather.WeatherTemplate)
-  console.log(appState.weather.icon, 'icon')
 }
 
 export class WeatherController {
   constructor() {
-    console.log('hello from weather controller');
     this.getWeather()
     appState.on('weather', _drawWeather)
+    appState.on('isCelsius', _drawWeather)
   }
 
   async getWeather() {
@@ -23,5 +21,9 @@ export class WeatherController {
       console.error(error)
       Pop.error(error)
     }
+  }
+
+  toggleCelsius() {
+    weatherService.toggleCelsius()
   }
 }

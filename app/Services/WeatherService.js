@@ -7,9 +7,11 @@ class WeatherService {
 
   async getWeather() {
     const res = await bcwAPI('weather')
-    console.log(res.data);
     appState.weather = new Weather(res.data)
-    console.log(appState.weather);
+  }
+
+  toggleCelsius() {
+    appState.isCelsius = !appState.isCelsius
   }
 }
 
