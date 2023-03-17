@@ -19,7 +19,6 @@ function _drawCount() {
 export class TodosController {
   constructor() {
     this.getTodos()
-    _drawCount()
     appState.on('todos', _drawTodos)
 
   }
@@ -28,6 +27,7 @@ export class TodosController {
   async getTodos() {
     try {
       await todosService.getTodos()
+      _drawCount()
     } catch (error) {
       console.error(error)
       Pop.error(error)

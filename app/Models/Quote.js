@@ -9,6 +9,6 @@ export class Quote {
   get QuoteTemplate() {
     return `
     <h4 class="text-center quote mb-3">"${this.content}"</h4>
-    <h6 class="mb-4 author">${this.author}</h6>`
+    <h6 class="mb-4 text-center author">${this.author}</h6>`
   }
 }

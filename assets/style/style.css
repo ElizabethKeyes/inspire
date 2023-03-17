@@ -43,7 +43,7 @@ footer {
   padding: 1em;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.498);
-  min-width: 20vw;
+  width: 25vw;
   position: fixed;
   bottom: 150px;
   right: 15px;
@@ -51,7 +51,7 @@ footer {
 
 #weather {
   position: fixed;
-  right: 15px;
+  left: 15px;
   top: 15px
 }
 
