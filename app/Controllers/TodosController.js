@@ -12,15 +12,15 @@ function _drawTodos() {
 
 function _drawCount() {
   let count = 0
-  appState.todos.forEach(t => t.completed ? count++ : '')
+  appState.todos.forEach(t => t.completed ? '' : count++)
   setText('todo-count', count)
 }
 
 export class TodosController {
   constructor() {
     this.getTodos()
+    _drawCount()
     appState.on('todos', _drawTodos)
-    appState.on('todos', _drawCount)
 
   }
 
@@ -28,7 +28,6 @@ export class TodosController {
   async getTodos() {
     try {
       await todosService.getTodos()
-      _drawCount()
     } catch (error) {
       console.error(error)
       Pop.error(error)
@@ -43,6 +42,7 @@ export class TodosController {
       // @ts-ignore
       form.reset()
       await todosService.addTodo(description)
+      _drawCount()
     } catch (error) {
       console.error(error)
       Pop.error(error)
@@ -65,6 +65,7 @@ export class TodosController {
   async complete(id) {
     try {
       await todosService.complete(id)
+      _drawCount()
     } catch (error) {
       console.error(error)
       Pop.error(error)
