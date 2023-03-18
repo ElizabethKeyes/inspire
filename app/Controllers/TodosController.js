@@ -54,6 +54,7 @@ export class TodosController {
     try {
       if (await Pop.confirm('Are you sure you want to remove this todo?')) {
         await todosService.delete(id)
+        _drawCount()
         Pop.toast('todo removed!', 'success', 'top', 1500)
       }
     } catch (error) {

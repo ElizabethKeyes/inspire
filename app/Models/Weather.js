@@ -20,9 +20,9 @@ export class Weather {
 
   get WeatherTemplate() {
     return `
-    <p class="p-0 m-0">${appState.isCelsius ? this.CTemp : this.FTemp}°${appState.isCelsius ? 'C' : 'F'}</p><br>
-    <p class="p-0 m-0">${this.description}</p><br>
-    <img src="${this.icon}">
+    <p class="p-0 m-0">${appState.isCelsius ? this.CTemp : this.FTemp}°${appState.isCelsius ? 'C' : 'F'}</p>
+    <p class="p-0 m-0">${this.description}</p>
+    <img src="${this.icon}" class="weather-icon">
     `
   }
 }
