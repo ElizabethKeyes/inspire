@@ -2,6 +2,7 @@
 body {
   background-size: cover;
   background-position: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 footer {
@@ -17,7 +18,7 @@ footer {
 
 .my-text {
   color: #e9ecef;
-  font-weight: bold;
+  font-weight: bold !important;
   text-shadow: 1px 1px black;
 }
 
@@ -26,10 +27,6 @@ footer {
   opacity: 0;
   transition: visibility 0s, opacity .5s linear;
 }
-
-/* #quote {
-  user-select: none;
-} */
 
 .quote:hover+.author {
   visibility: visible;
@@ -58,10 +55,8 @@ footer {
   top: 15px;
   right: 15px;
   background-color: rgba(0, 0, 0, 0.619);
-  color: #e9ecef
 }
 
-/* TODO remove the font color from this class and apply instead my custom text class to the toggle-button element */
 /* TODO style the offcanvas */
 .toggle-button:hover {
   background-color: rgba(0, 0, 0, 0.619) !important;
@@ -91,4 +86,8 @@ footer {
 .btn-search {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px
+}
+
+.offcanvas-bg {
+  background-color: rgba(0, 0, 0, 0.81);
 }

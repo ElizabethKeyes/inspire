@@ -8,12 +8,9 @@ class TodosService {
   async getTodos() {
     const res = await todoAPI.get('')
     appState.todos = res.data.map(t => new Todo(t))
-    console.log(res.data);
-    console.log(appState.todos, 'fetched todos');
   }
   async addTodo(description) {
     let newTodo = new Todo(description)
-    console.log(newTodo);
     const res = await todoAPI.post('', newTodo)
     appState.todos.push(new Todo(res.data))
     appState.emit('todos')
