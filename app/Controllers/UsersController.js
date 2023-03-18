@@ -7,7 +7,7 @@ import { setHTML } from "../Utils/Writer.js"
 function _drawUser() {
   console.log(appState.user);
   if (appState.user != null && appState.user.name != undefined) {
-    setHTML('user', appState.user.template)
+    setHTML('user', appState.user.Template)
   } else setHTML('user', User.form())
 }
 

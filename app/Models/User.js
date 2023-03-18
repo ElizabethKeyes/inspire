@@ -6,10 +6,18 @@ export class User {
     this.name = data.name
   }
 
-  get template() {
+  get Template() {
     return `
-    <h2>Hello, ${this.name}</h2>
+    <h2>${this.Greeting}, ${this.name}</h2>
     `
+  }
+
+  get Greeting() {
+    if (new Date().getHours() < 12) {
+      return 'Good Morning'
+    } else if (new Date().getHours() < 18) {
+      return 'Good Afternoon'
+    } else return 'Good Evening'
   }
 
   static form() {
