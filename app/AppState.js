@@ -1,3 +1,4 @@
+import { User } from "./Models/User.js"
 import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 import { loadState } from "./Utils/Store.js"
@@ -18,7 +19,7 @@ class AppState extends EventEmitter {
   todos = []
 
   /** @type {import('./Models/User').User|null} */
-  user = null
+  user = loadState('user', User) || null
 }
 
 export const appState = new Proxy(new AppState(), {

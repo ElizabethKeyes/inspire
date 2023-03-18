@@ -21,7 +21,7 @@
 <body class="user-select-none">
 
   <main class="container-fluid">
-    <section class="row">
+    <section class="row justify-content-center">
       <div class="col-3">
         <div class="glass-card my-text text-center" id="weather" onclick="app.weatherController.toggleCelsius()">
           <!-- STUB weather populates here -->
@@ -39,8 +39,14 @@
           <!-- STUB clock populates here -->
         </h1>
       </div>
-      <div class="col-12 text-center my-text">
-        <h2>Sample Text</h2>
+      <div class="col-6 my-text" id="user">
+        <!-- STUB user info/greeting populates here -->
+        <form class="mt-2 mb-4 mx-2 d-flex flex-row user-form" onsubmit="app.usersController.newUser()">
+          <input type="text" name="name" id="name" minlength="3" maxlength="25" placeholder="Please enter your name.."
+            class="form-control inline-input" required>
+          <button type="submit" class="btn btn-search name-btn"><i class="mdi mdi-check my-text"></i></button>
+        </form>
+        <!-- <h2>Sample Text</h2> -->
       </div>
       <!-- old todo card -->
       <!-- <div class="col-12 d-flex justify-content-end">
@@ -101,6 +107,8 @@
         class="form-control inline-input" required>
       <button type="submit" class="btn btn-search"><i class="mdi mdi-check my-text"></i></button>
     </form>
+    <button class="btn mb-4" title="Delete User Account" onclick="app.usersController.deleteUser()"><i
+        class="mdi mdi-account-cancel my-text"></i></button>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>

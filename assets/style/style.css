@@ -16,6 +16,20 @@ footer {
   justify-content: start;
 }
 
+#user {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.user-form {
+  max-width: 35vw;
+}
+
+.name-btn {
+  background-color: rgba(0, 0, 0, 0.498);
+}
+
 .my-text {
   color: #e9ecef;
   font-weight: bold !important;
@@ -57,7 +71,6 @@ footer {
   background-color: rgba(0, 0, 0, 0.619);
 }
 
-/* TODO style the offcanvas */
 .toggle-button:hover {
   background-color: rgba(0, 0, 0, 0.619) !important;
   color: #e9ecef !important
