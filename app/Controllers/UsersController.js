@@ -29,7 +29,7 @@ export class UsersController {
 
   async deleteUser() {
     window.event.preventDefault()
-    if (await Pop.confirm("Are you sure you want to delete your acocunt?", "All your todos will be lost.", "Yes, I'm sure", "warning"))
+    if (await Pop.confirm("Are you sure you want to delete your account?", "All your todos will be lost.", "Yes, I'm sure", "warning"))
       await usersService.deleteUser()
   }
 }

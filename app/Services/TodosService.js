@@ -1,6 +1,6 @@
 import { appState } from "../AppState.js"
 import { Todo } from "../Models/Todo.js"
-import { todoAPI } from "./AxiosService.js"
+import { bcwAPI, todoAPI } from "./AxiosService.js"
 
 
 class TodosService {
@@ -31,6 +31,10 @@ class TodosService {
   }
 
   async deleteUser() {
+    for (let i = 0; i < appState.todos.length; i++) {
+      const res = await todoAPI.delete(`${appState.todos[i].id}`)
+    }
+    appState.todos = []
 
   }
 }
