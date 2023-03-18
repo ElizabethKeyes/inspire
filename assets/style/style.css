@@ -104,3 +104,7 @@ footer {
 .offcanvas-bg {
   background-color: rgba(0, 0, 0, 0.81);
 }
+
+.delete-button {
+  max-width: 8vw;
+}

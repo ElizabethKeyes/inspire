@@ -8,6 +8,7 @@ function _drawTodos() {
   let template = ''
   todos.forEach(t => template += t.ListTemplate)
   setHTML('todo-list', template)
+  _drawCount()
 }
 
 function _drawCount() {

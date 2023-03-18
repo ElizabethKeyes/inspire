@@ -1,7 +1,7 @@
 import { appState } from "../AppState.js"
 import { User } from "../Models/User.js"
 import { saveState } from "../Utils/Store.js";
-
+import { todosService } from "./TodosService.js";
 
 class UsersService {
 
@@ -10,9 +10,12 @@ class UsersService {
     saveState('user', appState.user)
   }
 
-  deleteUser() {
+  async deleteUser() {
     appState.user = null
     saveState('user', appState.user)
+    // appState.todos = []
+    // appState.emit('count')
+    await todosService.deleteUser()
   }
 }
 

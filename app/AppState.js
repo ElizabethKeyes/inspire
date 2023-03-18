@@ -20,6 +20,8 @@ class AppState extends EventEmitter {
 
   /** @type {import('./Models/User').User|null} */
   user = loadState('user', User) || null
+
+  militaryTime = false
 }
 
 export const appState = new Proxy(new AppState(), {

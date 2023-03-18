@@ -29,6 +29,10 @@ class TodosService {
     appState.todos.splice(todoIndex, 1, todo)
     appState.emit('todos')
   }
+
+  async deleteUser() {
+
+  }
 }
 
 export const todosService = new TodosService()
