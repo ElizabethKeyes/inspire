@@ -89,6 +89,7 @@ footer {
 
 .my-clock {
   font-size: 8em;
+  cursor: pointer;
 }
 
 .inline-input {
@@ -105,6 +106,39 @@ footer {
   background-color: rgba(0, 0, 0, 0.81);
 }
 
-.delete-button {
+.small-button {
+  background-color: rgba(0, 0, 0, 0.619);
   max-width: 8vw;
+  max-height: 5vh;
+}
+
+.quote-button {
+  position: fixed;
+  left: 15px;
+  top: 162px;
+
+}
+
+.quote-button:hover {
+  background-color: rgba(0, 0, 0, 0.619) !important;
+  color: #e9ecef !important
+}
+
+.photo-button {
+  position: fixed;
+  left: 15px;
+  top: 221px;
+}
+
+.photo-button:hover {
+  background-color: rgba(0, 0, 0, 0.619) !important;
+  color: #e9ecef !important
+}
+
+.invisible {
+  visibility: none !important
+}
+
+.offcanvas {
+  visibility: visible !important
 }

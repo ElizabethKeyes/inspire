@@ -15,7 +15,7 @@ export class User {
   get Greeting() {
     if (new Date().getHours() < 12) {
       return 'Good Morning'
-    } else if (new Date().getHours() < 18) {
+    } else if (new Date().getHours() < 16) {
       return 'Good Afternoon'
     } else return 'Good Evening'
   }

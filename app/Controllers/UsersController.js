@@ -5,6 +5,14 @@ import { getFormData } from "../Utils/FormHandler.js"
 import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js"
 
+function _checkForUser() {
+  if (appState.user !== null && appState.user.name != undefined) {
+    document.getElementById('offcanvas-toggle').classList.remove('invisible')
+  } else if (appState.user == null || appState.user.name == undefined) {
+    document.getElementById('offcanvas-toggle').classList.add('invisible')
+  }
+}
+
 function _drawUser() {
   console.log(appState.user);
   if (appState.user != null && appState.user.name != undefined) {
@@ -15,7 +23,9 @@ function _drawUser() {
 export class UsersController {
   constructor() {
     _drawUser()
+    _checkForUser()
     appState.on('user', _drawUser)
+    appState.on('user', _checkForUser)
 
   }
 
@@ -31,5 +41,8 @@ export class UsersController {
     window.event.preventDefault()
     if (await Pop.confirm("Are you sure you want to delete your account?", "All your todos will be lost.", "Yes, I'm sure", "warning"))
       await usersService.deleteUser()
+    // @ts-ignore
+    bootstrap.Offcanvas.getOrCreateInstance('#todosOffCanvas').hide()
+
   }
 }
