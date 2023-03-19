@@ -17,6 +17,12 @@ class UsersService {
     // appState.emit('count')
     await todosService.deleteUser()
   }
+
+  changeFont(font) {
+    appState.user.font = font
+    console.log(appState.user)
+    saveState('user', appState.user)
+  }
 }
 
 export const usersService = new UsersService()

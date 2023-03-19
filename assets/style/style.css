@@ -3,6 +3,7 @@ body {
   background-size: cover;
   background-position: center;
   font-family: 'Montserrat', sans-serif;
+  /* font-family:  */
 }
 
 footer {
@@ -112,16 +113,15 @@ footer {
   max-height: 5vh;
 }
 
+.small-button:hover {
+  background-color: rgba(0, 0, 0, 0.619) !important;
+  color: #e9ecef !important
+}
+
 .quote-button {
   position: fixed;
   left: 15px;
   top: 162px;
-
-}
-
-.quote-button:hover {
-  background-color: rgba(0, 0, 0, 0.619) !important;
-  color: #e9ecef !important
 }
 
 .photo-button {
@@ -130,15 +130,16 @@ footer {
   top: 221px;
 }
 
-.photo-button:hover {
-  background-color: rgba(0, 0, 0, 0.619) !important;
-  color: #e9ecef !important
-}
-
 .invisible {
   visibility: none !important
 }
 
 .offcanvas {
   visibility: visible !important
+}
+
+.font-button {
+  position: fixed;
+  left: 15px;
+  top: 280px;
 }

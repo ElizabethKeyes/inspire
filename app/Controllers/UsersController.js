@@ -20,10 +20,15 @@ function _drawUser() {
   } else setHTML('user', User.form())
 }
 
+function _loadFont() {
+  document.body.style.fontFamily = appState.user.font
+}
+
 export class UsersController {
   constructor() {
     _drawUser()
     _checkForUser()
+    _loadFont()
     appState.on('user', _drawUser)
     appState.on('user', _checkForUser)
 
@@ -43,6 +48,19 @@ export class UsersController {
       await usersService.deleteUser()
     // @ts-ignore
     bootstrap.Offcanvas.getOrCreateInstance('#todosOffCanvas').hide()
-
   }
+
+  changeFont() {
+    window.event.preventDefault()
+    let form = window.event.target
+    // @ts-ignore
+    let font = form.font.value
+    document.body.style.fontFamily = font
+    // @ts-ignore
+    form.reset()
+    // @ts-ignore
+    bootstrap.Modal.getOrCreateInstance('#fontModal').hide()
+    usersService.changeFont(font)
+  }
+
 }
