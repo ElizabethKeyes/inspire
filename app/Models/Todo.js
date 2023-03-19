@@ -7,7 +7,6 @@ export class Todo {
     this.description = data.description || data
   }
 
-  // TODO figure out how to strike out the text
   get ListTemplate() {
     return `
     <div>

@@ -14,7 +14,6 @@ function _checkForUser() {
 }
 
 function _drawUser() {
-  console.log(appState.user);
   if (appState.user != null && appState.user.name != undefined) {
     setHTML('user', appState.user.Template)
   } else setHTML('user', User.form())

@@ -4,7 +4,7 @@ import { appState } from "../AppState.js"
 export class User {
   constructor(data) {
     this.name = data.name
-    this.font = data.font || 'Montserrat'
+    this.font = data.font || document.body.style.fontFamily
   }
 
   get Template() {
